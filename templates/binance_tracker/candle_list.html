@@ -1,0 +1,59 @@
+<!-- templates/binance_tracker/candle_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Real-Time Candle Changes</title>
+    <style>
+        .green { background-color: #d4edda; }
+        .red { background-color: #f8d7da; }
+        table { width: 100%; text-align: left; }
+        th, td { padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Real-Time Candle Changes</h1>
+    <table id="candle-table" border="1">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Open Price</th>
+                <th>Close Price</th>
+                <th>Percent Change</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be populated by JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        function fetchCandleData() {
+            fetch('/get-candles/')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.querySelector('#candle-table tbody');
+                    tableBody.innerHTML = '';  // Clear old data
+
+                    data.forEach(candle => {
+                        const row = document.createElement('tr');
+                        row.className = candle.is_green ? 'green' : 'red';
+
+                        row.innerHTML = `
+                            <td>${candle.symbol}</td>
+                            <td>${candle.open_price}</td>
+                            <td>${candle.close_price}</td>
+                            <td>${candle.percent_change.toFixed(2)}%</td>
+                        `;
+
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching candle data:', error));
+        }
+
+        // Fetch new data every second
+        setInterval(fetchCandleData, 1000);
+    </script>
+</body>
+</html>

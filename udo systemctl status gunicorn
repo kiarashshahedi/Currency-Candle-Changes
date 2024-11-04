@@ -1,0 +1,602 @@
+Oct 24 09:16:48 srv1512409007 systemd[1]: Started gunicorn.service - gunicorn daemon.
+Oct 24 09:16:48 srv1512409007 systemd[1]: [0;1;39m[0;1;31m[0;1;39mgunicorn.service: Main process exited, code=exited, status=203/EXEC[0m
+Oct 24 09:16:48 srv1512409007 systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mgunicorn.service: Failed with result 'exit-code'.[0m
+Oct 24 09:19:44 srv1512409007 systemd[1]: Started gunicorn.service - gunicorn daemon.
+Oct 24 09:19:44 srv1512409007 systemd[1]: [0;1;39m[0;1;31m[0;1;39mgunicorn.service: Main process exited, code=exited, status=203/EXEC[0m
+Oct 24 09:19:44 srv1512409007 systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mgunicorn.service: Failed with result 'exit-code'.[0m
+Oct 24 09:27:42 srv1512409007 systemd[1]: Started gunicorn.service - gunicorn daemon.
+Oct 24 09:27:42 srv1512409007 gunicorn[6084]: [2024-10-24 09:27:42 +0000] [6084] [INFO] Starting gunicorn 23.0.0
+Oct 24 09:27:42 srv1512409007 gunicorn[6084]: [2024-10-24 09:27:42 +0000] [6084] [INFO] Listening at: unix:/var/www/Django-candle/crypto_alert.sock (6084)
+Oct 24 09:27:42 srv1512409007 gunicorn[6084]: [2024-10-24 09:27:42 +0000] [6084] [INFO] Using worker: sync
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]: [2024-10-24 09:27:42 +0000] [6085] [INFO] Booting worker with pid: 6085
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]: [2024-10-24 09:27:42 +0000] [6085] [ERROR] Exception in worker process
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]: Traceback (most recent call last):
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:   File "/usr/local/lib/python3.12/dist-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:     worker.init_process()
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:   File "/usr/local/lib/python3.12/dist-packages/gunicorn/workers/base.py", line 135, in init_process
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:     self.load_wsgi()
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:   File "/usr/local/lib/python3.12/dist-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:     self.wsgi = self.app.wsgi()
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:                 ^^^^^^^^^^^^^^^
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:   File "/usr/local/lib/python3.12/dist-packages/gunicorn/app/base.py", line 66, in wsgi
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:     self.callable = self.load()
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:                     ^^^^^^^^^^^
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:   File "/usr/local/lib/python3.12/dist-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:     return self.load_wsgiapp()
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:            ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:   File "/usr/local/lib/python3.12/dist-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:     return util.import_app(self.app_uri)
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:   File "/usr/local/lib/python3.12/dist-packages/gunicorn/util.py", line 370, in import_app
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:     mod = importlib.import_module(module)
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:     return _bootstrap._gcd_import(name[level:], package, level)
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:   File "/var/www/Django-candle/crypto_alert/crypto_alert/wsgi.py", line 12, in <module>
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]:     from django.core.wsgi import get_wsgi_application
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]: ModuleNotFoundError: No module named 'django'
+Oct 24 09:27:42 srv1512409007 gunicorn[6085]: [2024-10-24 09:27:42 +0000] [6085] [INFO] Worker exiting (pid: 6085)
+Oct 24 09:27:42 srv1512409007 gunicorn[6084]: [2024-10-24 09:27:42 +0000] [6084] [ERROR] Worker (pid:6085) exited with code 3
+Oct 24 09:27:42 srv1512409007 gunicorn[6084]: [2024-10-24 09:27:42 +0000] [6084] [ERROR] Shutting down: Master
+Oct 24 09:27:42 srv1512409007 gunicorn[6084]: [2024-10-24 09:27:42 +0000] [6084] [ERROR] Reason: Worker failed to boot.
+Oct 24 09:27:42 srv1512409007 systemd[1]: [0;1;39m[0;1;31m[0;1;39mgunicorn.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED[0m
+Oct 24 09:27:42 srv1512409007 systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mgunicorn.service: Failed with result 'exit-code'.[0m
+Oct 24 09:28:55 srv1512409007 systemd[1]: Started gunicorn.service - gunicorn daemon.
+Oct 24 09:28:55 srv1512409007 systemd[1]: [0;1;39m[0;1;31m[0;1;39mgunicorn.service: Main process exited, code=exited, status=203/EXEC[0m
+Oct 24 09:28:55 srv1512409007 systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mgunicorn.service: Failed with result 'exit-code'.[0m
+Oct 24 09:30:44 srv1512409007 systemd[1]: Started gunicorn.service - gunicorn daemon.
+Oct 24 09:30:44 srv1512409007 python[6262]: /var/www/Django-candle/venv/bin/python: can't open file '/var/www/Django-candle/venv/bin/gunicorn': [Errno 2] No such file or directory
+Oct 24 09:30:44 srv1512409007 systemd[1]: [0;1;39m[0;1;31m[0;1;39mgunicorn.service: Main process exited, code=exited, status=2/INVALIDARGUMENT[0m
+Oct 24 09:30:44 srv1512409007 systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mgunicorn.service: Failed with result 'exit-code'.[0m
+Oct 24 09:36:12 srv1512409007 systemd[1]: Started gunicorn.service - gunicorn daemon.
+Oct 24 09:36:13 srv1512409007 python[6648]: [2024-10-24 09:36:13 +0000] [6648] [INFO] Starting gunicorn 23.0.0
+Oct 24 09:36:13 srv1512409007 python[6648]: [2024-10-24 09:36:13 +0000] [6648] [INFO] Listening at: unix:/var/www/Django-candle/crypto_alert.sock (6648)
+Oct 24 09:36:13 srv1512409007 python[6648]: [2024-10-24 09:36:13 +0000] [6648] [INFO] Using worker: sync
+Oct 24 09:36:13 srv1512409007 python[6649]: [2024-10-24 09:36:13 +0000] [6649] [INFO] Booting worker with pid: 6649
+Oct 24 09:36:13 srv1512409007 python[6650]: [2024-10-24 09:36:13 +0000] [6650] [INFO] Booting worker with pid: 6650
+Oct 24 09:36:13 srv1512409007 python[6651]: [2024-10-24 09:36:13 +0000] [6651] [INFO] Booting worker with pid: 6651
+Oct 24 09:36:37 srv1512409007 python[6651]: Internal Server Error: /
+Oct 24 09:36:37 srv1512409007 python[6651]: Traceback (most recent call last):
+Oct 24 09:36:37 srv1512409007 python[6651]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/template/base.py", line 510, in parse
+Oct 24 09:36:37 srv1512409007 python[6651]:     compile_func = self.tags[command]
+Oct 24 09:36:37 srv1512409007 python[6651]:                    ~~~~~~~~~^^^^^^^^^
+Oct 24 09:36:37 srv1512409007 python[6651]: KeyError: 'static'
+Oct 24 09:36:37 srv1512409007 python[6651]: During handling of the above exception, another exception occurred:
+Oct 24 09:36:37 srv1512409007 python[6651]: Traceback (most recent call last):
+Oct 24 09:36:37 srv1512409007 python[6651]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+Oct 24 09:36:37 srv1512409007 python[6651]:     response = get_response(request)
+Oct 24 09:36:37 srv1512409007 python[6651]:                ^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:36:37 srv1512409007 python[6651]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+Oct 24 09:36:37 srv1512409007 python[6651]:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+Oct 24 09:36:37 srv1512409007 python[6651]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:36:37 srv1512409007 python[6651]:   File "/var/www/Django-candle/crypto_alert/monitor/views.py", line 84, in index
+Oct 24 09:36:37 srv1512409007 python[6651]:     return render(request, 'index.html', {'currency_decreases': currency_decrease_queue, 'threshold': browser_decrease_threshold})
+Oct 24 09:36:37 srv1512409007 python[6651]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:36:37 srv1512409007 python[6651]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+Oct 24 09:36:37 srv1512409007 python[6651]:     content = loader.render_to_string(template_name, context, request, using=using)
+Oct 24 09:36:37 srv1512409007 python[6651]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:36:37 srv1512409007 python[6651]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+Oct 24 09:36:37 srv1512409007 python[6651]:     template = get_template(template_name, using=using)
+Oct 24 09:36:37 srv1512409007 python[6651]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:36:37 srv1512409007 python[6651]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+Oct 24 09:36:37 srv1512409007 python[6651]:     return engine.get_template(template_name)
+Oct 24 09:36:37 srv1512409007 python[6651]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:36:37 srv1512409007 python[6651]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+Oct 24 09:36:37 srv1512409007 python[6651]:     return Template(self.engine.get_template(template_name), self)
+Oct 24 09:36:37 srv1512409007 python[6651]:                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:36:37 srv1512409007 python[6651]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+Oct 24 09:36:37 srv1512409007 python[6651]:     template, origin = self.find_template(template_name)
+Oct 24 09:36:37 srv1512409007 python[6651]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:36:37 srv1512409007 python[6651]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+Oct 24 09:36:37 srv1512409007 python[6651]:     template = loader.get_template(name, skip=skip)
+Oct 24 09:36:37 srv1512409007 python[6651]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:36:37 srv1512409007 python[6651]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+Oct 24 09:36:37 srv1512409007 python[6651]:     template = super().get_template(template_name, skip)
+Oct 24 09:36:37 srv1512409007 python[6651]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:36:37 srv1512409007 python[6651]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+Oct 24 09:36:37 srv1512409007 python[6651]:     return Template(
+Oct 24 09:36:37 srv1512409007 python[6651]:            ^^^^^^^^^
+Oct 24 09:36:37 srv1512409007 python[6651]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+Oct 24 09:36:37 srv1512409007 python[6651]:     self.nodelist = self.compile_nodelist()
+Oct 24 09:36:37 srv1512409007 python[6651]:                     ^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:36:37 srv1512409007 python[6651]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+Oct 24 09:36:37 srv1512409007 python[6651]:     nodelist = parser.parse()
+Oct 24 09:36:37 srv1512409007 python[6651]:                ^^^^^^^^^^^^^^
+Oct 24 09:36:37 srv1512409007 python[6651]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/template/base.py", line 512, in parse
+Oct 24 09:36:37 srv1512409007 python[6651]:     self.invalid_block_tag(token, command, parse_until)
+Oct 24 09:36:37 srv1512409007 python[6651]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/template/base.py", line 573, in invalid_block_tag
+Oct 24 09:36:37 srv1512409007 python[6651]:     raise self.error(
+Oct 24 09:36:37 srv1512409007 python[6651]: django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 6: 'static'. Did you forget to register or load this tag?
+Oct 24 09:36:37 srv1512409007 python[6651]:  - - [24/Oct/2024:09:36:37 +0000] "GET / HTTP/1.0" 500 125963 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+Oct 24 09:37:37 srv1512409007 python[6650]:  - - [24/Oct/2024:09:37:37 +0000] "GET / HTTP/1.0" 200 632 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+Oct 24 09:37:41 srv1512409007 python[6649]:  - - [24/Oct/2024:09:37:41 +0000] "POST /update_exclusions/ HTTP/1.0" 200 632 "http://185.221.237.173/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+Oct 24 09:38:50 srv1512409007 python[6649]:  - - [24/Oct/2024:09:38:50 +0000] "POST /update_exclusions/ HTTP/1.0" 200 632 "http://185.221.237.173/update_exclusions/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+Oct 24 09:53:48 srv1512409007 python[6650]:  - - [24/Oct/2024:09:53:48 +0000] "GET /update_exclusions/ HTTP/1.0" 200 632 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+Oct 24 09:54:01 srv1512409007 python[6651]: Not Found: /candles/
+Oct 24 09:54:01 srv1512409007 python[6651]:  - - [24/Oct/2024:09:54:01 +0000] "GET /candles/ HTTP/1.0" 404 3009 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+Oct 24 09:54:10 srv1512409007 python[6649]:  - - [24/Oct/2024:09:54:10 +0000] "GET / HTTP/1.0" 200 632 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+Oct 24 09:54:48 srv1512409007 python[6650]: Not Found: /candles/
+Oct 24 09:54:48 srv1512409007 python[6650]:  - - [24/Oct/2024:09:54:48 +0000] "GET /candles/ HTTP/1.0" 404 3009 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+Oct 24 09:55:15 srv1512409007 python[6648]: [2024-10-24 09:55:15 +0000] [6648] [INFO] Handling signal: term
+Oct 24 09:55:15 srv1512409007 python[6649]: [2024-10-24 09:55:15 +0000] [6649] [INFO] Worker exiting (pid: 6649)
+Oct 24 09:55:15 srv1512409007 systemd[1]: Stopping gunicorn.service - gunicorn daemon...
+Oct 24 09:55:15 srv1512409007 python[6650]: [2024-10-24 09:55:15 +0000] [6650] [INFO] Worker exiting (pid: 6650)
+Oct 24 09:55:15 srv1512409007 python[6651]: [2024-10-24 09:55:15 +0000] [6651] [INFO] Worker exiting (pid: 6651)
+Oct 24 09:55:45 srv1512409007 python[6648]: [2024-10-24 09:55:45 +0000] [6648] [INFO] Shutting down: Master
+Oct 24 09:55:45 srv1512409007 systemd[1]: gunicorn.service: Deactivated successfully.
+Oct 24 09:55:45 srv1512409007 systemd[1]: Stopped gunicorn.service - gunicorn daemon.
+Oct 24 09:55:45 srv1512409007 systemd[1]: gunicorn.service: Consumed 5.204s CPU time, 195.0M memory peak, 0B memory swap peak.
+Oct 24 09:55:45 srv1512409007 systemd[1]: Started gunicorn.service - gunicorn daemon.
+Oct 24 09:55:45 srv1512409007 python[6816]: [2024-10-24 09:55:45 +0000] [6816] [INFO] Starting gunicorn 23.0.0
+Oct 24 09:55:45 srv1512409007 python[6816]: [2024-10-24 09:55:45 +0000] [6816] [INFO] Listening at: unix:/var/www/Django-candle/crypto_alert.sock (6816)
+Oct 24 09:55:45 srv1512409007 python[6816]: [2024-10-24 09:55:45 +0000] [6816] [INFO] Using worker: sync
+Oct 24 09:55:45 srv1512409007 python[6818]: [2024-10-24 09:55:45 +0000] [6818] [INFO] Booting worker with pid: 6818
+Oct 24 09:55:45 srv1512409007 python[6819]: [2024-10-24 09:55:45 +0000] [6819] [INFO] Booting worker with pid: 6819
+Oct 24 09:55:45 srv1512409007 python[6820]: [2024-10-24 09:55:45 +0000] [6820] [INFO] Booting worker with pid: 6820
+Oct 24 09:55:51 srv1512409007 python[6820]: [2024-10-24 09:55:51 +0000] [6820] [ERROR] Error handling request /candles/
+Oct 24 09:55:51 srv1512409007 python[6820]: Traceback (most recent call last):
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = get_response(request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 181, in _get_response
+Oct 24 09:55:51 srv1512409007 python[6820]:     callback, callback_args, callback_kwargs = self.resolve_request(request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+Oct 24 09:55:51 srv1512409007 python[6820]:     resolver_match = resolver.resolve(request.path_info)
+Oct 24 09:55:51 srv1512409007 python[6820]:                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 666, in resolve
+Oct 24 09:55:51 srv1512409007 python[6820]:     for pattern in self.url_patterns:
+Oct 24 09:55:51 srv1512409007 python[6820]:                    ^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+Oct 24 09:55:51 srv1512409007 python[6820]:     res = instance.__dict__[self.name] = self.func(instance)
+Oct 24 09:55:51 srv1512409007 python[6820]:                                          ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+Oct 24 09:55:51 srv1512409007 python[6820]:     patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+Oct 24 09:55:51 srv1512409007 python[6820]:                        ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+Oct 24 09:55:51 srv1512409007 python[6820]:     res = instance.__dict__[self.name] = self.func(instance)
+Oct 24 09:55:51 srv1512409007 python[6820]:                                          ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return import_module(self.urlconf_name)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return _bootstrap._gcd_import(name[level:], package, level)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/crypto_alert/crypto_alert/urls.py", line 6, in <module>
+Oct 24 09:55:51 srv1512409007 python[6820]:     path('', include('monitor.urls')),
+Oct 24 09:55:51 srv1512409007 python[6820]:              ^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+Oct 24 09:55:51 srv1512409007 python[6820]:     urlconf_module = import_module(urlconf_module)
+Oct 24 09:55:51 srv1512409007 python[6820]:                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return _bootstrap._gcd_import(name[level:], package, level)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/crypto_alert/monitor/urls.py", line 6, in <module>
+Oct 24 09:55:51 srv1512409007 python[6820]:     path('', views.index, name='index'),
+Oct 24 09:55:51 srv1512409007 python[6820]:              ^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]: AttributeError: module 'monitor.views' has no attribute 'index'
+Oct 24 09:55:51 srv1512409007 python[6820]: During handling of the above exception, another exception occurred:
+Oct 24 09:55:51 srv1512409007 python[6820]: Traceback (most recent call last):
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = get_response(request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 129, in __call__
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = response or self.get_response(request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 57, in inner
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = response_for_exception(request, exc)
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = handle_uncaught_exception(
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+Oct 24 09:55:51 srv1512409007 python[6820]:     return debug.technical_500_response(request, *exc_info)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 69, in technical_500_response
+Oct 24 09:55:51 srv1512409007 python[6820]:     html = reporter.get_traceback_html()
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 428, in get_traceback_html
+Oct 24 09:55:51 srv1512409007 python[6820]:     c = Context(self.get_traceback_data(), use_l10n=False)
+Oct 24 09:55:51 srv1512409007 python[6820]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 411, in get_traceback_data
+Oct 24 09:55:51 srv1512409007 python[6820]:     c["raising_view_name"] = get_caller(self.request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                              ^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 102, in get_caller
+Oct 24 09:55:51 srv1512409007 python[6820]:     resolver_match = resolve(request.path)
+Oct 24 09:55:51 srv1512409007 python[6820]:                      ^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/base.py", line 24, in resolve
+Oct 24 09:55:51 srv1512409007 python[6820]:     return get_resolver(urlconf).resolve(path)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 666, in resolve
+Oct 24 09:55:51 srv1512409007 python[6820]:     for pattern in self.url_patterns:
+Oct 24 09:55:51 srv1512409007 python[6820]:                    ^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+Oct 24 09:55:51 srv1512409007 python[6820]:     res = instance.__dict__[self.name] = self.func(instance)
+Oct 24 09:55:51 srv1512409007 python[6820]:                                          ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+Oct 24 09:55:51 srv1512409007 python[6820]:     patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+Oct 24 09:55:51 srv1512409007 python[6820]:                        ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+Oct 24 09:55:51 srv1512409007 python[6820]:     res = instance.__dict__[self.name] = self.func(instance)
+Oct 24 09:55:51 srv1512409007 python[6820]:                                          ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return import_module(self.urlconf_name)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return _bootstrap._gcd_import(name[level:], package, level)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/crypto_alert/crypto_alert/urls.py", line 6, in <module>
+Oct 24 09:55:51 srv1512409007 python[6820]:     path('', include('monitor.urls')),
+Oct 24 09:55:51 srv1512409007 python[6820]:              ^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+Oct 24 09:55:51 srv1512409007 python[6820]:     urlconf_module = import_module(urlconf_module)
+Oct 24 09:55:51 srv1512409007 python[6820]:                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return _bootstrap._gcd_import(name[level:], package, level)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/crypto_alert/monitor/urls.py", line 6, in <module>
+Oct 24 09:55:51 srv1512409007 python[6820]:     path('', views.index, name='index'),
+Oct 24 09:55:51 srv1512409007 python[6820]:              ^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]: AttributeError: module 'monitor.views' has no attribute 'index'
+Oct 24 09:55:51 srv1512409007 python[6820]: During handling of the above exception, another exception occurred:
+Oct 24 09:55:51 srv1512409007 python[6820]: Traceback (most recent call last):
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = get_response(request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 129, in __call__
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = response or self.get_response(request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 57, in inner
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = response_for_exception(request, exc)
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = handle_uncaught_exception(
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+Oct 24 09:55:51 srv1512409007 python[6820]:     return debug.technical_500_response(request, *exc_info)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 69, in technical_500_response
+Oct 24 09:55:51 srv1512409007 python[6820]:     html = reporter.get_traceback_html()
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 428, in get_traceback_html
+Oct 24 09:55:51 srv1512409007 python[6820]:     c = Context(self.get_traceback_data(), use_l10n=False)
+Oct 24 09:55:51 srv1512409007 python[6820]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 411, in get_traceback_data
+Oct 24 09:55:51 srv1512409007 python[6820]:     c["raising_view_name"] = get_caller(self.request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                              ^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 102, in get_caller
+Oct 24 09:55:51 srv1512409007 python[6820]:     resolver_match = resolve(request.path)
+Oct 24 09:55:51 srv1512409007 python[6820]:                      ^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/base.py", line 24, in resolve
+Oct 24 09:55:51 srv1512409007 python[6820]:     return get_resolver(urlconf).resolve(path)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 666, in resolve
+Oct 24 09:55:51 srv1512409007 python[6820]:     for pattern in self.url_patterns:
+Oct 24 09:55:51 srv1512409007 python[6820]:                    ^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+Oct 24 09:55:51 srv1512409007 python[6820]:     res = instance.__dict__[self.name] = self.func(instance)
+Oct 24 09:55:51 srv1512409007 python[6820]:                                          ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+Oct 24 09:55:51 srv1512409007 python[6820]:     patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+Oct 24 09:55:51 srv1512409007 python[6820]:                        ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+Oct 24 09:55:51 srv1512409007 python[6820]:     res = instance.__dict__[self.name] = self.func(instance)
+Oct 24 09:55:51 srv1512409007 python[6820]:                                          ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return import_module(self.urlconf_name)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return _bootstrap._gcd_import(name[level:], package, level)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/crypto_alert/crypto_alert/urls.py", line 6, in <module>
+Oct 24 09:55:51 srv1512409007 python[6820]:     path('', include('monitor.urls')),
+Oct 24 09:55:51 srv1512409007 python[6820]:              ^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+Oct 24 09:55:51 srv1512409007 python[6820]:     urlconf_module = import_module(urlconf_module)
+Oct 24 09:55:51 srv1512409007 python[6820]:                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return _bootstrap._gcd_import(name[level:], package, level)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/crypto_alert/monitor/urls.py", line 6, in <module>
+Oct 24 09:55:51 srv1512409007 python[6820]:     path('', views.index, name='index'),
+Oct 24 09:55:51 srv1512409007 python[6820]:              ^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]: AttributeError: module 'monitor.views' has no attribute 'index'
+Oct 24 09:55:51 srv1512409007 python[6820]: During handling of the above exception, another exception occurred:
+Oct 24 09:55:51 srv1512409007 python[6820]: Traceback (most recent call last):
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = get_response(request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 129, in __call__
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = response or self.get_response(request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 57, in inner
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = response_for_exception(request, exc)
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = handle_uncaught_exception(
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+Oct 24 09:55:51 srv1512409007 python[6820]:     return debug.technical_500_response(request, *exc_info)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 69, in technical_500_response
+Oct 24 09:55:51 srv1512409007 python[6820]:     html = reporter.get_traceback_html()
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 428, in get_traceback_html
+Oct 24 09:55:51 srv1512409007 python[6820]:     c = Context(self.get_traceback_data(), use_l10n=False)
+Oct 24 09:55:51 srv1512409007 python[6820]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 411, in get_traceback_data
+Oct 24 09:55:51 srv1512409007 python[6820]:     c["raising_view_name"] = get_caller(self.request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                              ^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 102, in get_caller
+Oct 24 09:55:51 srv1512409007 python[6820]:     resolver_match = resolve(request.path)
+Oct 24 09:55:51 srv1512409007 python[6820]:                      ^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/base.py", line 24, in resolve
+Oct 24 09:55:51 srv1512409007 python[6820]:     return get_resolver(urlconf).resolve(path)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 666, in resolve
+Oct 24 09:55:51 srv1512409007 python[6820]:     for pattern in self.url_patterns:
+Oct 24 09:55:51 srv1512409007 python[6820]:                    ^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+Oct 24 09:55:51 srv1512409007 python[6820]:     res = instance.__dict__[self.name] = self.func(instance)
+Oct 24 09:55:51 srv1512409007 python[6820]:                                          ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+Oct 24 09:55:51 srv1512409007 python[6820]:     patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+Oct 24 09:55:51 srv1512409007 python[6820]:                        ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+Oct 24 09:55:51 srv1512409007 python[6820]:     res = instance.__dict__[self.name] = self.func(instance)
+Oct 24 09:55:51 srv1512409007 python[6820]:                                          ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return import_module(self.urlconf_name)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return _bootstrap._gcd_import(name[level:], package, level)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/crypto_alert/crypto_alert/urls.py", line 6, in <module>
+Oct 24 09:55:51 srv1512409007 python[6820]:     path('', include('monitor.urls')),
+Oct 24 09:55:51 srv1512409007 python[6820]:              ^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+Oct 24 09:55:51 srv1512409007 python[6820]:     urlconf_module = import_module(urlconf_module)
+Oct 24 09:55:51 srv1512409007 python[6820]:                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return _bootstrap._gcd_import(name[level:], package, level)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/crypto_alert/monitor/urls.py", line 6, in <module>
+Oct 24 09:55:51 srv1512409007 python[6820]:     path('', views.index, name='index'),
+Oct 24 09:55:51 srv1512409007 python[6820]:              ^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]: AttributeError: module 'monitor.views' has no attribute 'index'
+Oct 24 09:55:51 srv1512409007 python[6820]: During handling of the above exception, another exception occurred:
+Oct 24 09:55:51 srv1512409007 python[6820]: Traceback (most recent call last):
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = get_response(request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 129, in __call__
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = response or self.get_response(request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 57, in inner
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = response_for_exception(request, exc)
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = handle_uncaught_exception(
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+Oct 24 09:55:51 srv1512409007 python[6820]:     return debug.technical_500_response(request, *exc_info)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 69, in technical_500_response
+Oct 24 09:55:51 srv1512409007 python[6820]:     html = reporter.get_traceback_html()
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 428, in get_traceback_html
+Oct 24 09:55:51 srv1512409007 python[6820]:     c = Context(self.get_traceback_data(), use_l10n=False)
+Oct 24 09:55:51 srv1512409007 python[6820]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 411, in get_traceback_data
+Oct 24 09:55:51 srv1512409007 python[6820]:     c["raising_view_name"] = get_caller(self.request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                              ^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 102, in get_caller
+Oct 24 09:55:51 srv1512409007 python[6820]:     resolver_match = resolve(request.path)
+Oct 24 09:55:51 srv1512409007 python[6820]:                      ^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/base.py", line 24, in resolve
+Oct 24 09:55:51 srv1512409007 python[6820]:     return get_resolver(urlconf).resolve(path)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 666, in resolve
+Oct 24 09:55:51 srv1512409007 python[6820]:     for pattern in self.url_patterns:
+Oct 24 09:55:51 srv1512409007 python[6820]:                    ^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+Oct 24 09:55:51 srv1512409007 python[6820]:     res = instance.__dict__[self.name] = self.func(instance)
+Oct 24 09:55:51 srv1512409007 python[6820]:                                          ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+Oct 24 09:55:51 srv1512409007 python[6820]:     patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+Oct 24 09:55:51 srv1512409007 python[6820]:                        ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+Oct 24 09:55:51 srv1512409007 python[6820]:     res = instance.__dict__[self.name] = self.func(instance)
+Oct 24 09:55:51 srv1512409007 python[6820]:                                          ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return import_module(self.urlconf_name)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return _bootstrap._gcd_import(name[level:], package, level)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/crypto_alert/crypto_alert/urls.py", line 6, in <module>
+Oct 24 09:55:51 srv1512409007 python[6820]:     path('', include('monitor.urls')),
+Oct 24 09:55:51 srv1512409007 python[6820]:              ^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+Oct 24 09:55:51 srv1512409007 python[6820]:     urlconf_module = import_module(urlconf_module)
+Oct 24 09:55:51 srv1512409007 python[6820]:                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return _bootstrap._gcd_import(name[level:], package, level)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/crypto_alert/monitor/urls.py", line 6, in <module>
+Oct 24 09:55:51 srv1512409007 python[6820]:     path('', views.index, name='index'),
+Oct 24 09:55:51 srv1512409007 python[6820]:              ^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]: AttributeError: module 'monitor.views' has no attribute 'index'
+Oct 24 09:55:51 srv1512409007 python[6820]: During handling of the above exception, another exception occurred:
+Oct 24 09:55:51 srv1512409007 python[6820]: Traceback (most recent call last):
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = get_response(request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 129, in __call__
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = response or self.get_response(request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 57, in inner
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = response_for_exception(request, exc)
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = handle_uncaught_exception(
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+Oct 24 09:55:51 srv1512409007 python[6820]:     return debug.technical_500_response(request, *exc_info)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 69, in technical_500_response
+Oct 24 09:55:51 srv1512409007 python[6820]:     html = reporter.get_traceback_html()
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 428, in get_traceback_html
+Oct 24 09:55:51 srv1512409007 python[6820]:     c = Context(self.get_traceback_data(), use_l10n=False)
+Oct 24 09:55:51 srv1512409007 python[6820]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 411, in get_traceback_data
+Oct 24 09:55:51 srv1512409007 python[6820]:     c["raising_view_name"] = get_caller(self.request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                              ^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 102, in get_caller
+Oct 24 09:55:51 srv1512409007 python[6820]:     resolver_match = resolve(request.path)
+Oct 24 09:55:51 srv1512409007 python[6820]:                      ^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/base.py", line 24, in resolve
+Oct 24 09:55:51 srv1512409007 python[6820]:     return get_resolver(urlconf).resolve(path)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 666, in resolve
+Oct 24 09:55:51 srv1512409007 python[6820]:     for pattern in self.url_patterns:
+Oct 24 09:55:51 srv1512409007 python[6820]:                    ^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+Oct 24 09:55:51 srv1512409007 python[6820]:     res = instance.__dict__[self.name] = self.func(instance)
+Oct 24 09:55:51 srv1512409007 python[6820]:                                          ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+Oct 24 09:55:51 srv1512409007 python[6820]:     patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+Oct 24 09:55:51 srv1512409007 python[6820]:                        ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+Oct 24 09:55:51 srv1512409007 python[6820]:     res = instance.__dict__[self.name] = self.func(instance)
+Oct 24 09:55:51 srv1512409007 python[6820]:                                          ^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return import_module(self.urlconf_name)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return _bootstrap._gcd_import(name[level:], package, level)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/crypto_alert/crypto_alert/urls.py", line 6, in <module>
+Oct 24 09:55:51 srv1512409007 python[6820]:     path('', include('monitor.urls')),
+Oct 24 09:55:51 srv1512409007 python[6820]:              ^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+Oct 24 09:55:51 srv1512409007 python[6820]:     urlconf_module = import_module(urlconf_module)
+Oct 24 09:55:51 srv1512409007 python[6820]:                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+Oct 24 09:55:51 srv1512409007 python[6820]:     return _bootstrap._gcd_import(name[level:], package, level)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/crypto_alert/monitor/urls.py", line 6, in <module>
+Oct 24 09:55:51 srv1512409007 python[6820]:     path('', views.index, name='index'),
+Oct 24 09:55:51 srv1512409007 python[6820]:              ^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]: AttributeError: module 'monitor.views' has no attribute 'index'
+Oct 24 09:55:51 srv1512409007 python[6820]: During handling of the above exception, another exception occurred:
+Oct 24 09:55:51 srv1512409007 python[6820]: Traceback (most recent call last):
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = get_response(request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 129, in __call__
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = response or self.get_response(request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 57, in inner
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = response_for_exception(request, exc)
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+Oct 24 09:55:51 srv1512409007 python[6820]:     response = handle_uncaught_exception(
+Oct 24 09:55:51 srv1512409007 python[6820]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+Oct 24 09:55:51 srv1512409007 python[6820]:     return debug.technical_500_response(request, *exc_info)
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 69, in technical_500_response
+Oct 24 09:55:51 srv1512409007 python[6820]:     html = reporter.get_traceback_html()
+Oct 24 09:55:51 srv1512409007 python[6820]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 428, in get_traceback_html
+Oct 24 09:55:51 srv1512409007 python[6820]:     c = Context(self.get_traceback_data(), use_l10n=False)
+Oct 24 09:55:51 srv1512409007 python[6820]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 411, in get_traceback_data
+Oct 24 09:55:51 srv1512409007 python[6820]:     c["raising_view_name"] = get_caller(self.request)
+Oct 24 09:55:51 srv1512409007 python[6820]:                              ^^^^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/views/debug.py", line 102, in get_caller
+Oct 24 09:55:51 srv1512409007 python[6820]:     resolver_match = resolve(request.path)
+Oct 24 09:55:51 srv1512409007 python[6820]:                      ^^^^^^^^^^^^^^^^^^^^^
+Oct 24 09:55:51 srv1512409007 python[6820]:   File "/var/www/Django-candle/venv/lib/python3.12/site-packages/django/urls/base.py", line 24, in resolve
+Oct 24 09:55:51 srv1512409007 python[6820]:     return ge

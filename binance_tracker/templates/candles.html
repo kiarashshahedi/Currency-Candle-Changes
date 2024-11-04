@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candle Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .red-candle { background-color: #f8d7da; color: #842029; }
+        .green-candle { background-color: #d1e7dd; color: #0f5132; }
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            text-align: center;
+            color: #333;
+        }
+        .loading-overlay h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .spinner-border { width: 3rem; height: 3rem; margin-top: 1rem; }
+    </style>
+</head>
+<body>
+    <div id="loading-overlay" class="loading-overlay">
+        <h1> Crypto Candle Changes</h1>
+        <p> CCC-app</p>
+        <p> Developers: Appino Team</p>
+        <p>Instagram: @appino_team</p>
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <div class="container mt-5" id="main-content" style="display: none;">
+        <h1 class="mb-4">Candle Data</h1>
+
+        <!-- Table for Significant Decreases (> 0.5% decrease) -->
+        <h2>Significant Decreases (more than 0.5%)</h2>
+        <table id="significant-table" class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Symbol</th>
+                    <th>Open Price</th>
+                    <th>Close Price</th>
+                    <th>Percent Change</th>
+                    <th>Status</th>
+                    <th>Time</th> 
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Table for Decrease (Red) Symbols -->
+        <h2>Decrease Symbols (Red)</h2>
+        <table id="red-candle-table" class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Symbol</th>
+                    <th>Open Price</th>
+                    <th>Close Price</th>
+                    <th>Percent Change</th>
+                    <th>Status</th>
+                    <th>Time</th> 
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Table for Increase (Green) Symbols -->
+        <h2>Increase Symbols (Green)</h2>
+        <table id="green-candle-table" class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Symbol</th>
+                    <th>Open Price</th>
+                    <th>Close Price</th>
+                    <th>Percent Change</th>
+                    <th>Status</th>
+                    <th>Time</th> 
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        let redCandleData = [];
+        let greenCandleData = [];
+        let trackedSymbols = [];
+        let initialLoad = true;
+
+        function fetchDataAndUpdateTables() {
+            $.ajax({
+                url: "{% url 'get_candles' %}",
+                method: "GET",
+                dataType: "json",
+                success: function(data) {
+                    updateRedTable('#red-candle-table tbody', data.candle_changes);
+                    updateGreenTable('#green-candle-table tbody', data.candle_changes);
+                    updateSignificantTable('#significant-table tbody', data.significant_changes);
+
+                    if (initialLoad) {
+                        $("#loading-overlay").hide();
+                        $("#main-content").show();
+                        initialLoad = false;
+                    }
+                },
+                error: function(error) {
+                    console.error("Error fetching data:", error);
+                }
+            });
+        }
+
+        function updateRedTable(tableSelector, data) {
+            const tableBody = $(tableSelector);
+            data.forEach(candle => {
+                if (!candle.is_green && candle.percent_change !== 0) {
+                    redCandleData.unshift(candle);
+                }
+            });
+            while (redCandleData.length > 100) {
+                redCandleData.pop();
+            }
+
+            tableBody.empty();
+            redCandleData.forEach((candle, index) => {
+                const row = `<tr class="red-candle">
+                                <td>${index + 1}</td>
+                                <td>${candle.symbol}</td>
+                                <td>${candle.open_price}</td>
+                                <td>${candle.close_price}</td>
+                                <td>${candle.percent_change.toFixed(2)}%</td>
+                                <td>Red (↓)</td>
+                                <td>${candle.time}</td>
+                             </tr>`;
+                tableBody.append(row);
+            });
+        }
+
+        function updateGreenTable(tableSelector, data) {
+            const tableBody = $(tableSelector);
+            data.forEach(candle => {
+                if (candle.is_green && candle.percent_change !== 0) {
+                    greenCandleData.unshift(candle);
+                }
+            });
+            while (greenCandleData.length > 100) {
+                greenCandleData.pop();
+            }
+
+            tableBody.empty();
+            greenCandleData.forEach((candle, index) => {
+                const row = `<tr class="green-candle">
+                                <td>${index + 1}</td>
+                                <td>${candle.symbol}</td>
+                                <td>${candle.open_price}</td>
+                                <td>${candle.close_price}</td>
+                                <td>${candle.percent_change.toFixed(2)}%</td>
+                                <td>Green (↑)</td>
+                                <td>${candle.time}</td>
+                             </tr>`;
+                tableBody.append(row);
+            });
+        }
+
+        function updateSignificantTable(tableSelector, data) {
+            const tableBody = $(tableSelector);
+            data.forEach(candle => {
+                if (!trackedSymbols.includes(candle.symbol)) {
+                    const row = `<tr class="red-candle">
+                                    <td>${candle.symbol}</td>
+                                    <td>${candle.open_price}</td>
+                                    <td>${candle.close_price}</td>
+                                    <td>${candle.percent_change.toFixed(2)}%</td>
+                                    <td>Red (↓)</td>
+                                    <td>${candle.time}</td>
+                                 </tr>`;
+                    tableBody.prepend(row);
+                    trackedSymbols.push(candle.symbol);
+                    sendAlert(candle.symbol, candle.percent_change.toFixed(2));
+                }
+            });
+        }
+
+	function sendAlert(symbol, percentChange) {
+            // Check if browser supports notifications
+            if (!("Notification" in window)) {
+                alert(`New Decrease: ${symbol}, Candle decreased by ${percentChange}%`);
+                return;
+            }
+
+            // Permission handling and notification display
+            if (Notification.permission === "granted") {
+                // Show notification if permission is granted
+                new Notification(`New Decrease: ${symbol}`, {
+                    body: `Candle decreased by ${percentChange}%`
+                });
+            } else if (Notification.permission !== "denied") {
+                // Request permission if not already granted or denied
+                Notification.requestPermission().then(permission => {
+                    if (permission === "granted") {
+                        new Notification(`New Decrease: ${symbol}`, {
+                            body: `Candle decreased by ${percentChange}%`
+                        });
+                    } else {
+                        // Fallback alert if user denies notification
+                        alert(`New Decrease: ${symbol}, Candle decreased by ${percentChange}%`);
+                    }
+                });
+            } else {
+                // Fallback alert for denied permissions
+                alert(`New Decrease: ${symbol}, Candle decreased by ${percentChange}%`);
+            }
+        }	
+
+	// Request notification permission on page load if not yet granted
+        if (Notification.permission !== "granted") {
+            Notification.requestPermission();
+        }
+
+        setInterval(fetchDataAndUpdateTables, 10000);
+
+        $(document).ready(function() {
+            fetchDataAndUpdateTables();
+        });
+    </script>
+
+</body>
+</html>
+
+
