@@ -5,4 +5,5 @@ from .views import get_candles
 
 urlpatterns = [
     path('get-candles/', get_candles, name='get_candles'),
+
 ]
